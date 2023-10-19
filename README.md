@@ -15,7 +15,7 @@ Then run pbtk on the bam files from UCDavis
   m84066_230908_205816_s3.hifi_reads.default.bam \
   m84066_230914_182946_s2.hifi_reads.default.bam
 ```
-## Installing IPA
+## Installing IPA V1.1.2
 From [IPA's github](https://github.com/PacificBiosciences/pbipa)
 Select channels
 ```
