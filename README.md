@@ -32,5 +32,8 @@ mamba install pbipa
 
 Once IPA is installed, we need to concatenate our fastqs into a single file for use with IPA
 ```
-cat m84066_230908_205816_s3.hifi_reads.default.fastq m84066_230914_182946_s2.hifi_reads.default.fastq > O_Rubescens_merged.fastq
+  cat \
+  m84066_230908_205816_s3.hifi_reads.default.fastq \
+  m84066_230914_182946_s2.hifi_reads.default.fastq \
+  > O_Rubescens_merged.fastq
 ```
