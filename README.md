@@ -42,3 +42,26 @@ Once IPA is installed, we need to concatenate our fastqs into a single file for 
 ```
   ipa local --nthreads 20 --njobs 4 -i O_Rubescens_merged.fastq
 ```
+# Quality Assessment
+## Inspector
+Install inspector dependencies
+  python
+  pysam
+  statsmodels (tested with version 0.10.1)
+  minimap2 (tested with version 2.10 and 2.15)
+  samtools (tested with version 1.9)
+Inspector error correction module dependencies
+  flye (tested with version 2.8.3)
+Installation
+```
+  mamba create --name ins
+  mamba activate ins
+  mamba install -c bioconda inspector
+```
+Clone the repository and add Inspector to PATH
+```
+  git clone https://github.com/ChongLab/Inspector.git
+  export PATH=$PWD/Inspector/:$PATH
+```
+Running inspector
+```
