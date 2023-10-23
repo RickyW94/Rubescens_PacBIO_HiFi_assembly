@@ -43,6 +43,7 @@ Once IPA is installed, we need to concatenate our fastqs into a single file for 
   ipa local --nthreads 20 --njobs 4 -i O_Rubescens_merged.fastq
 ```
 # Quality Assessment
+
 ## Inspector
 Install inspector dependencies
   python
@@ -63,5 +64,21 @@ Clone the repository and add Inspector to PATH
   git clone https://github.com/ChongLab/Inspector.git
   export PATH=$PWD/Inspector/:$PATH
 ```
-Running inspector
+Running Inspector
+```
+Using the example from Inspector's github for evaluation with hifi reads
+```
+inspector.py \
+  -c O_Rubescens_assembly.fastq
+  -r O_Rubescens_merged.fastq
+
+
+## Blobtoolkit
+Installing Blobtoolkit
+```
+pip install blobtoolkit
+```
+To make the output viewable through a browser we'll use firefox with geckodriver
+```
+mamba install -c conda-forge firefox geckodriver
 ```
