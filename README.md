@@ -53,7 +53,7 @@ Install inspector dependencies
   samtools (tested with version 1.9)
 Inspector error correction module dependencies
   flye (tested with version 2.8.3)
-Installation
+Installation (V1.2)
 ```
   mamba create --name ins
   mamba activate ins
