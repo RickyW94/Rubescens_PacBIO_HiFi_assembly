@@ -65,7 +65,7 @@ Clone the repository and add Inspector to PATH
   export PATH=$PWD/Inspector/:$PATH
 ```
 Running Inspector
-```
+
 Using the example from Inspector's github for evaluation with hifi reads
 ```
 inspector.py \
