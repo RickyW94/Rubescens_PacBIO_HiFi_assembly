@@ -55,9 +55,8 @@ Inspector error correction module dependencies
   flye (tested with version 2.8.3)
 Installation (V1.2)
 ```
-  mamba create --name ins
-  mamba activate ins
-  mamba install -c bioconda inspector
+  mamba create -n inspector inspector python=2.7
+  conda activate inspector
 ```
 Clone the repository and add Inspector to PATH
 ```
@@ -66,16 +65,35 @@ Clone the repository and add Inspector to PATH
 ```
 Running Inspector
 
-Using the example from Inspector's github for evaluation with hifi reads
 ```
 inspector.py \
-  -c O_Rubescens_assembly.fastq \
-  -r O_Rubescens_merged.fastq \
-  -o inspector_out/ --datatype hifi
+	-c /home/jon/Desktop/UCDavis_PacBIO_Aristotle/RUN/19-final/final.p_ctg.fasta \
+	-r /home/jon/Desktop/UCDavis_PacBIO_Aristotle/out.fastq \
+	-o /home/jon/Desktop/UCDavis_PacBIO_Aristotle/QC/inspector/orub_pbipa_inspector \
+	-t 40 \
+	-d hifi
+```
+
+## Blobtoolkit
+Running blobtoolkit
+```
+docker run -it --rm --name btk \
+  -v /home/jon/Desktop/UCDavis_PacBIO_Aristotle/QC/blobtoolkit:/blobtoolkit/datasets \
+  -v /home/jon/Desktop/UCDavis_PacBIO_Aristotle:/blobtoolkit/data \
+  genomehubs/blobtoolkit:latest \
+  blobtools create \
+  --fasta data/RUN/19-final/final.p_ctg.fasta \
+  datasets/blobtoolkit/orub_pbipa
+```
+```
+docker run -d --rm --name btk \
+	-v /home/jon/Desktop/UCDavis_PacBIO_Aristotle/QC/blobtoolkit/blobtoolkit:/blobtoolkit/datasets \
+	-p 8000:8000 -p 8080:8080 \
+	-e VIEWER=true \
+	genomehubs/blobtoolkit:latest
 ```
 
 
-## Blobtoolkit
 Installing Blobtoolkit
 ```
 pip install blobtoolkit
