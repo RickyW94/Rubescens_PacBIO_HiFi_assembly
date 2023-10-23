@@ -69,8 +69,10 @@ Running Inspector
 Using the example from Inspector's github for evaluation with hifi reads
 ```
 inspector.py \
-  -c O_Rubescens_assembly.fastq
-  -r O_Rubescens_merged.fastq
+  -c O_Rubescens_assembly.fastq \
+  -r O_Rubescens_merged.fastq \
+  -o inspector_out/ --datatype hifi
+```
 
 
 ## Blobtoolkit
