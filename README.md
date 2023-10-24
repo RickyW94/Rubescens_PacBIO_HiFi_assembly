@@ -112,7 +112,7 @@ mamba create -n hifiasm -c bioconda hifiasm
 Running HiFiasm
 ```
 hifiasm \
-	-o O_Rubescens_merged \
-	-t 80 \
-	O_Rubescens_merged.fastq
+	-o O_Rubescens_merged_hifiasm \
+	-t 40 \
+	/home/jon/Desktop/UCDavis_PacBIO_Aristotle/out.fastq
 ```
