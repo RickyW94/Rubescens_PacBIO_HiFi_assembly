@@ -98,7 +98,21 @@ Installing Blobtoolkit
 ```
 pip install blobtoolkit
 ```
+
 To make the output viewable through a browser we'll use firefox with geckodriver
+
 ```
 mamba install -c conda-forge firefox geckodriver
+```
+# Assembling with Hifiasm
+Install instructions
+```
+mamba create -n hifiasm -c bioconda hifiasm
+```
+Running HiFiasm
+```
+hifiasm \
+	-o O_Rubescens_merged \
+	-t 80 \
+	O_Rubescens_merged.fastq
 ```
