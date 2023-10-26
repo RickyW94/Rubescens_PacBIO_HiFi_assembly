@@ -10,10 +10,10 @@ conda activate pbtk
 Then run pbtk on the bam files from UCDavis
 ```
 bam2fastq \
-  -o out \
-  -j 70 \
-  m84066_230908_205816_s3.hifi_reads.default.bam \
-  m84066_230914_182946_s2.hifi_reads.default.bam
+	-o out \
+	-j 70 \
+	m84066_230908_205816_s3.hifi_reads.default.bam \
+	m84066_230914_182946_s2.hifi_reads.default.bam
 ```
 ## Installing IPA V1.1.2
 From [IPA's github](https://github.com/PacificBiosciences/pbipa)
@@ -33,9 +33,9 @@ mamba install pbipa
 Once IPA is installed, we need to concatenate our fastqs into a single file for use with IPA
 ```
 cat \
-  m84066_230908_205816_s3.hifi_reads.default.fastq \
-  m84066_230914_182946_s2.hifi_reads.default.fastq \
-  > O_Rubescens_merged.fastq
+	m84066_230908_205816_s3.hifi_reads.default.fastq \
+	m84066_230914_182946_s2.hifi_reads.default.fastq \
+	> O_Rubescens_merged.fastq
 ```
 
 ## Running IPA
@@ -46,7 +46,7 @@ ipa local --nthreads 20 --njobs 4 -i O_Rubescens_merged.fastq
 
 ## Inspector
 Install inspector dependencies
-  python
+	python
   pysam
   statsmodels (tested with version 0.10.1)
   minimap2 (tested with version 2.10 and 2.15)
