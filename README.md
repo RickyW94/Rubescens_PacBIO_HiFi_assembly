@@ -116,10 +116,12 @@ hifiasm \
 	-t 40 \
 	/home/jon/Desktop/UCDavis_PacBIO_Aristotle/out.fastq
 ```
-Output will be in .gfa format. Convert to .fastq using gfatools version .5
+Output will be in .gfa format. Convert to .fastq using gfatools version .4-r214-dirty
 ```
 mamba create -n gfatools -c bioconda gfatools
 conda activate gfatools
 ```
 Running gfatools
+```
+gfatools gfa2fa O_Rubescens_merged_hifiasm.bp.p_ctg.gfa > O_rubescens_hifiasm_homo.fasta
 ```
