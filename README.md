@@ -116,3 +116,10 @@ hifiasm \
 	-t 40 \
 	/home/jon/Desktop/UCDavis_PacBIO_Aristotle/out.fastq
 ```
+Output will be in .gfa format. Convert to .fastq using gfatools version .5
+```
+mamba create -n gfatools -c bioconda gfatools
+conda activate gfatools
+```
+Running gfatools
+```
