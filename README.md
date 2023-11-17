@@ -125,3 +125,18 @@ Running gfatools
 ```
 gfatools gfa2fa O_Rubescens_merged_hifiasm.bp.p_ctg.gfa > O_rubescens_hifiasm_homo.fasta
 ```
+# Assembling with Flye
+Install using conda
+```
+conda create -n flye -c bioconda flye
+conda activate flye
+```
+Running flye
+```
+flye \
+	--pacbio-hifi \
+	/media/data/rwright/UCDavis_PacBIO_Aristotle/O_Rubescens_merged.fastq \
+	--out-dir /media/data/rwright/UCDavis_PacBIO_Aristotle/O_Rubescens_merged.fastq \
+	--scaffold \
+	--threads 15
+```
