@@ -135,8 +135,8 @@ Running flye
 ```
 flye \
 	--pacbio-hifi \
-	/media/data/rwright/UCDavis_PacBIO_Aristotle/O_Rubescens_merged.fastq \
-	--out-dir /media/data/rwright/UCDavis_PacBIO_Aristotle/O_Rubescens_merged.fastq \
+	/media/data/rwright/UCDavis_PacBIO_Aristotle/out.fastq.gz \
+	--out-dir /media/data/rwright/UCDavis_PacBIO_Aristotle/flye_assembly \
 	--scaffold \
 	--threads 15
 ```
