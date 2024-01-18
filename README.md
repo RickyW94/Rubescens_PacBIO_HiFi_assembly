@@ -140,3 +140,15 @@ flye \
 	--scaffold \
 	--threads 15
 ```
+
+# Running Inspector on Genomics Computer
+Install as above
+Then run
+```
+inspector.py \
+	-c /media/data/rwright/UCDavis_PacBIO_Aristotle/ipa_assembly/final.p_ctg.fasta \
+	-r /media/data/rwright/UCDavis_PacBIO_Aristotle/out.fastq.gz \
+	-o /media/data/rwright/UCDavis_PacBIO_Aristotle/Inspector/orub_pbipa_inspector \
+	-t 15 \
+	-d hifi
+```
