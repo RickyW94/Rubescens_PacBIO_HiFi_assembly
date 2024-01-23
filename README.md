@@ -149,18 +149,20 @@ Then run
 inspector.py \
 	-c /media/data/rwright/UCDavis_PacBIO_Aristotle/ipa_assembly/final.p_ctg.fasta \
 	-r /media/data/rwright/UCDavis_PacBIO_Aristotle/out.fastq.gz \
+	-o /media/data/rwright/UCDavis_PacBIO_Aristotle/Inspector/orub_pbipa_inspector \
+	-t 15 \
+	-d hifi
 ```
 Inspector failed to map any reads to the genome. Moving on to CRAQ for genome assessment and NextPolish2.
 # Running CRAQ
 While Inspector could do the polishing for us, CRAQ will just get us an idea of how much polishing we'll need to do with NextPolish2
 ## Install CRAQ
 ```
-
+git clone https://github.com/JiaoLaboratory/CRAQ.git 
 ```
-
+## Run CRAQ
+Running CRAQ without short reads
+```
 perl ./CRAQ/bin/craq -g ipa_assembly/final.p_ctg.fasta -sms out.fastq.gz -x map-hifi
-
-	-o /media/data/rwright/UCDavis_PacBIO_Aristotle/Inspector/orub_pbipa_inspector \
-	-t 15 \
-	-d hifi
 ```
+
