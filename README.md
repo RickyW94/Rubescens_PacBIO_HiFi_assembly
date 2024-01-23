@@ -154,7 +154,7 @@ inspector.py \
 	-d hifi
 ```
 Inspector failed to map any reads to the genome. Moving on to CRAQ for genome assessment and NextPolish2.
-# Running CRAQ
+# Running CRAQ and NextPolish2
 While Inspector could do the polishing for us, CRAQ will just get us an idea of how much polishing we'll need to do with NextPolish2
 ## Install CRAQ
 ```
@@ -166,3 +166,24 @@ Running CRAQ without short reads
 perl ./CRAQ/bin/craq -g ipa_assembly/final.p_ctg.fasta -sms out.fastq.gz -x map-hifi
 ```
 
+## Installing NextPolish2
+Create new environment using mamba
+```
+mamba create --name nextpolish2 nextpolish2
+conda activate nextpolish2
+```
+## NextPolish2 dependencies and prep
+Install [minimap2](https://github.com/lh3/minimap2/) if not already installed
+```
+sudo apt install minimap2
+```
+Map raw reads to assembly using minimap2 and samtools
+```
+minimap2 -ax map-hifi -t 15 ./ipa_assembly/final.p_ctg.fasta out.fastq.gz|samtools sort -o hifi.map.sort.bam -
+```
+Index the bam output
+```
+samtools index hifi.map.sort.bam
+```
+
+##
