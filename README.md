@@ -185,5 +185,6 @@ Index the bam output
 ```
 samtools index hifi.map.sort.bam
 ```
-
+Prep kmer datasets using yak
+Install yak
 ##
