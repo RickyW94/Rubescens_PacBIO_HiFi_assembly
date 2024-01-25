@@ -175,7 +175,8 @@ wget https://github.com/Nextomics/NextPolish/releases/download/v1.4.1/NextPolish
 pip install paralleltask
 tar -vxzf NextPolish.tgz && cd NextPolish && make
 ```
-## NextPolish2 dependencies and prep
+## NextPolish2 dependencies and prep (partially deprecated, actually using NextPolish, not NextPolish2)
+Nextpolish2 is dependent on short read data, which we don't have. However, the first steps for Nextpolish2 are the same, so we can salvage the alignment generated from the steps below below.
 Map raw reads to assembly using minimap2 and samtools
 ```
 minimap2 -ax map-hifi -t 15 ./ipa_assembly/final.p_ctg.fasta out.fastq.gz|samtools sort -o hifi.map.sort.bam -
@@ -184,11 +185,10 @@ Index the bam output
 ```
 samtools index hifi.map.sort.bam
 ```
-Prep kmer datasets using yak
-Install yak
+In order to proceed from this point using NextPolish, we must pull the requisite steps from the bash script in step 4 of the [NextPolish tutorial](https://nextpolish.readthedocs.io/en/latest/TUTORIAL.html).
+This script creates an alignment using minimap2 then runs nextpolish, then repeats once by default. We will have to do that all manually twice.
+Unfortunately, it doesn't specify which version of python to use, so for now we'll assume python3 is adequate.
 ```
-conda install bioconda::yak
-```
-Producing 21-mer and 31-mer datasets according to the default example given on nextpolish2 github
-
-##
+ls `pwd`/hifi.map.sort.bam > hifi.map.sort.bam.fofn #Generates a list (of length 1 in this case) of files for nextpolish
+python NextPolish/lib/nextpolish2.py -g ./ipa_assembly/final.p_ctg.fasta -l hifi.map.sort.bam.fofn -r hifi -p 15 -sp -o
+python NextPolish/lib/nextpolish2.py -g ${input} -l lgs.sort.bam.fofn -r ${read_type} -p ${threads} -sp -o genome.nextpolish.fa;
