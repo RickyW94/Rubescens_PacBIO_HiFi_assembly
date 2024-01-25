@@ -191,3 +191,8 @@ Unfortunately, it doesn't specify which version of python to use, so for now we'
 ```
 ls `pwd`/hifi.map.sort.bam > hifi.map.sort.bam.fofn #Generates a list (of length 1 in this case) of files for nextpolish
 python NextPolish/lib/nextpolish2.py -g ./ipa_assembly/final.p_ctg.fasta -l hifi.map.sort.bam.fofn -r hifi -p 15 -sp -o assembly.nextpolish.fa
+```
+Nextpolish complains about too many fragments mapped to the genome and suggests using asm20 instead of map-hifi in minimap2's settings. Since the alignment takes so long, I'm going to proceed as though this is the next round of polishing, starting by aligning the reads to the already polished genome.
+```
+minimap2 -ax asm20 -t 15 assembly.nextpolish.fa out.fastq.gz|samtools sort -o asm20.map.sort.bam -
+```
