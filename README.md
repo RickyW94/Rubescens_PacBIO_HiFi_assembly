@@ -166,17 +166,16 @@ Running CRAQ without short reads
 perl ./CRAQ/bin/craq -g ipa_assembly/final.p_ctg.fasta -sms out.fastq.gz -x map-hifi
 ```
 
-## Installing NextPolish2
-Create new environment using mamba
+## Installing NextPolish
 ```
-mamba create --name nextpolish2 nextpolish2
-conda activate nextpolish2
+wget https://github.com/Nextomics/NextPolish/releases/download/v1.4.1/NextPolish.tgz
+```
+
+```
+pip install paralleltask
+tar -vxzf NextPolish.tgz && cd NextPolish && make
 ```
 ## NextPolish2 dependencies and prep
-Install [minimap2](https://github.com/lh3/minimap2/) if not already installed
-```
-sudo apt install minimap2
-```
 Map raw reads to assembly using minimap2 and samtools
 ```
 minimap2 -ax map-hifi -t 15 ./ipa_assembly/final.p_ctg.fasta out.fastq.gz|samtools sort -o hifi.map.sort.bam -
@@ -187,4 +186,9 @@ samtools index hifi.map.sort.bam
 ```
 Prep kmer datasets using yak
 Install yak
+```
+conda install bioconda::yak
+```
+Producing 21-mer and 31-mer datasets according to the default example given on nextpolish2 github
+
 ##
