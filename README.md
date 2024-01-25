@@ -190,5 +190,4 @@ This script creates an alignment using minimap2 then runs nextpolish, then repea
 Unfortunately, it doesn't specify which version of python to use, so for now we'll assume python3 is adequate.
 ```
 ls `pwd`/hifi.map.sort.bam > hifi.map.sort.bam.fofn #Generates a list (of length 1 in this case) of files for nextpolish
-python NextPolish/lib/nextpolish2.py -g ./ipa_assembly/final.p_ctg.fasta -l hifi.map.sort.bam.fofn -r hifi -p 15 -sp -o
-python NextPolish/lib/nextpolish2.py -g ${input} -l lgs.sort.bam.fofn -r ${read_type} -p ${threads} -sp -o genome.nextpolish.fa;
+python NextPolish/lib/nextpolish2.py -g ./ipa_assembly/final.p_ctg.fasta -l hifi.map.sort.bam.fofn -r hifi -p 15 -sp -o assembly.nextpolish.fa
