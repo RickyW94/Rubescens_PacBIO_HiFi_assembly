@@ -196,3 +196,9 @@ Nextpolish complains about too many fragments mapped to the genome and suggests 
 ```
 minimap2 -ax asm20 -t 15 assembly.nextpolish.fa out.fastq.gz|samtools sort -o asm20.map.sort.bam -
 ```
+Now perform a second round of polishing on the alignment output 'asm20.map.sort.bam'
+```
+ls `pwd`/asm20.map.sort.bam > asm20.map.sort.bam.fofn
+python NextPolish/lib/nextpolish2.py -g ./assembly.nextpolish.fa -l asm20.map.sort.bam.fofn -r hifi -p 15 -sp -o assembly_2.nextpolish.fa
+```
+The prior output was named 'assembly.nextpolish.fa', the output of this second round will be named 'assembly_2.nextpolish.fa'
