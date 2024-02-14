@@ -196,6 +196,10 @@ Nextpolish complains about too many fragments mapped to the genome and suggests 
 ```
 minimap2 -ax asm20 -t 15 assembly.nextpolish.fa out.fastq.gz|samtools sort -o asm20.map.sort.bam -
 ```
+Index the bam file
+```
+samtools index asm20.map.sort.bam
+```
 Now perform a second round of polishing on the alignment output 'asm20.map.sort.bam'
 ```
 ls `pwd`/asm20.map.sort.bam > asm20.map.sort.bam.fofn
