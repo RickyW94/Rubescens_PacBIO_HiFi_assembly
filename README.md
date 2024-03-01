@@ -217,6 +217,8 @@ conda activate busco
 ```
 ## Run Busco
 Use the mollusc database
-```
 
+Run for each version. First is 'media/data/rwright/UCDavis_PacBIO_Aristotle/ipa_assembly/final.p_ctg.fasta'. Second is 'media/data/rwright/UCDavis_PacBIO_Aristotle/assembly.nextpolish.fa'. Third is 'media/data/rwright/UCDavis_PacBIO_Aristotle/assembly_2.nextpolish.fa'
+```
+busco -i final.p_ctg.fasta -l mollusca_odb10 -o final.p_ctg_busco -m genome -c 15
 ```
