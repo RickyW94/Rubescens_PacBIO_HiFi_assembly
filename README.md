@@ -206,3 +206,12 @@ ls `pwd`/asm20.map.sort.bam > asm20.map.sort.bam.fofn
 python NextPolish/lib/nextpolish2.py -g ./assembly.nextpolish.fa -l asm20.map.sort.bam.fofn -r hifi -p 15 -sp -o assembly_2.nextpolish.fa
 ```
 The prior output was named 'assembly.nextpolish.fa', the output of this second round will be named 'assembly_2.nextpolish.fa'
+
+# Busco
+## Install Busco
+```
+mamba create -n busco -c conda-forge -c bioconda busco=5.6.1
+```
+```
+conda activate busco
+```
