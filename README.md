@@ -215,3 +215,8 @@ mamba create -n busco -c conda-forge -c bioconda busco=5.6.1
 ```
 conda activate busco
 ```
+## Run Busco
+Use the mollusc database
+```
+
+```
