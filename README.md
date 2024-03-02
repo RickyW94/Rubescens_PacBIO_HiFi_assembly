@@ -224,8 +224,8 @@ Run for each version. First is 'media/data/rwright/UCDavis_PacBIO_Aristotle/ipa_
 busco -i final.p_ctg.fasta -l mollusca_odb10 -o final.p_ctg_busco -m genome -c 15 -f
 ```
 ```
-busco -i final.p_ctg.fasta -l assembly.nextpolish.fa -o final.p_ctg_busco -m genome -c 15 -f
+busco -i assembly.nextpolish.fa -l mollusca_odb10 -o assembly.nextpolish_busco -m genome -c 15 -f
 ```
 ```
-busco -i final.p_ctg.fasta -l assembly_2.nextpolish.fa -o final.p_ctg_busco -m genome -c 15 -f
+busco -i assembly_2.nextpolish.fa -l mollusca_odb10 -o assembly_2.nextpolish_busco -m genome -c 15 -f
 ```
