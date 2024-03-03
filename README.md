@@ -231,8 +231,21 @@ busco -i assembly_2.nextpolish.fa -l mollusca_odb10 -o assembly_2.nextpolish_bus
 ```
 
 # Nextpolish2 again
-Nextpolish without short reads didn't really polish much so we'll try nextpolish2 using the short reads from the RNA editing experiment.
+Nextpolish without short reads didn't really polish much so we'll try nextpolish2 using the short reads from the RNA editing experiment. Those short reads will be used to create a kmer dataset using yak.
 ## Installing nextpolish2
 ```
 mamba install nextpolish2
+```
+## Install yak
+```
+git clone https://github.com/lh3/yak
+cd yak && make
+```
+We'll reuse the mapping file from the first polishing run we did with nextpolish, that is, 'hifi.map.sort.bam'.
+## make 21-mer and 31-mer datasets from short reads using yak
+```
+./yak/yak count -o k21.yak -k 21 -b 37 <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_1.fq.gz) <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_2.fq.gz)
+```
+```
+./yak/yak count -o k31.yak -k 31 -b 37 <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_1.fq.gz) <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_2.fq.gz)
 ```
