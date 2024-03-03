@@ -234,7 +234,11 @@ busco -i assembly_2.nextpolish.fa -l mollusca_odb10 -o assembly_2.nextpolish_bus
 Nextpolish without short reads didn't really polish much so we'll try nextpolish2 using the short reads from the RNA editing experiment. Those short reads will be used to create a kmer dataset using yak.
 ## Installing nextpolish2
 ```
-git clone --recursive https://github.com:Nextomics/NextPolish2.git
+curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+
+```
+git clone --recursive https://github.com/Nextomics/NextPolish2.git
 ```
 ```
 cd NextPolish2 && cargo build --release
