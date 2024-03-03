@@ -233,8 +233,17 @@ busco -i assembly_2.nextpolish.fa -l mollusca_odb10 -o assembly_2.nextpolish_bus
 # Nextpolish2 again
 Nextpolish without short reads didn't really polish much so we'll try nextpolish2 using the short reads from the RNA editing experiment. Those short reads will be used to create a kmer dataset using yak.
 ## Installing nextpolish2
+Dependencies first. Start with installing rust, then cargo and cmake.
 ```
 curl --proto '=https' --tlsv1.2 -sSf https://sh.rustup.rs | sh
+```
+```
+sudo apt install cargo
+sudo apt install cmake
+```
+```
+curl https://sh.rustup.rs -sSf | sh
+
 ```
 
 ```
