@@ -229,3 +229,10 @@ busco -i assembly.nextpolish.fa -l mollusca_odb10 -o assembly.nextpolish_busco -
 ```
 busco -i assembly_2.nextpolish.fa -l mollusca_odb10 -o assembly_2.nextpolish_busco -m genome -c 15 -f
 ```
+
+# Nextpolish2 again
+Nextpolish without short reads didn't really polish much so we'll try nextpolish2 using the short reads from the RNA editing experiment.
+## Installing nextpolish2
+```
+mamba install nextpolish2
+```
