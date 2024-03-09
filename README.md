@@ -263,6 +263,10 @@ We'll reuse the mapping file from the first polishing run we did with nextpolish
 ```
 ./yak/yak count -o k31.yak -k 31 -b 37 <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_1.fq.gz) <(zcat D4_CKDN220050988-1A_H7NK3DSX5_L1_2.fq.gz)
 ```
+## Align reads to IPA assembly
+```
+minimap2 -ax map-hifi -t 15 ipa_assembly/final.p_ctg.fasta out.fastq.gz | samtools sort -o hifi.map.sort.bam -
+```
 ## Run Nextpolish2
 ```
 ./NextPolish2/target/release/nextPolish2 -t 15 hifi.map.sort.bam ipa_assembly/final.p_ctg.fasta k21.yak k31.yak > asm.np2_1.fa
