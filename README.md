@@ -278,5 +278,5 @@ use '.../NextPolish2/target/release/nextPolish2 -h' for the only command documen
 
 ## Run busco again
 ```
-busco -i asm.np2_1.fa -l mollusca_odb10 -o final.p_ctg_busco -m genome -c 15 -f
+busco -i asm.np2_1.fa -l mollusca_odb10 -o asm.np2_1_busco -m genome -c 15 -f
 ```
