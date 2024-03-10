@@ -275,3 +275,8 @@ samtools index hifi.map.sort.bam
 ./NextPolish2/target/release/nextPolish2 -t 15 hifi.map.sort.bam ipa_assembly/final.p_ctg.fasta k21.yak k31.yak > asm.np2_1.fa
 ```
 use '.../NextPolish2/target/release/nextPolish2 -h' for the only command documentation in existence for the god-forsaken program
+
+## Run busco again
+```
+busco -i asm.np2_1.fa -l mollusca_odb10 -o final.p_ctg_busco -m genome -c 15 -f
+```
