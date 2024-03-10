@@ -267,6 +267,9 @@ We'll reuse the mapping file from the first polishing run we did with nextpolish
 ```
 minimap2 -ax map-hifi -t 15 ipa_assembly/final.p_ctg.fasta out.fastq.gz | samtools sort -o hifi.map.sort.bam -
 ```
+```
+samtools index hifi.map.sort.bam
+```
 ## Run Nextpolish2
 ```
 ./NextPolish2/target/release/nextPolish2 -t 15 hifi.map.sort.bam ipa_assembly/final.p_ctg.fasta k21.yak k31.yak > asm.np2_1.fa
